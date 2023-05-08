@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<link rel="stylesheet" href="gierjsn.css">
+
+</head>
+<body>
+    <header>
+        <a href="#" id="logo">LOGO</a>
+        <button id="openMenu">&#9776;</button>
+
+        <nav id="menu">
+            <button id="closeMenu">X</button>
+            <a href="#">Link 01</a>
+            <a href="#">Link 02</a>
+            <a href="#">Link 03</a>
+            <a href="#">Link 04</a>            
+        </nav>
+    </header>
+    
+    <aside>Relacionado = aside</aside>
+    <main>Principal</main>    
+    <footer>rodapé</footer>
+
+    <script>
+    openMenu.addEventListener('click', ()=>{         
+        menu.style.display = 'flex'
+        
+        menu.style.right = (menu.offsetWidth * -1) + 'px'
+
+        openMenu.style.display = 'none'
+
+        setTimeout(()=>{
+            menu.style.opacity = '1'
+            menu.style.right = '0'
+        }, 10)
+
+    })
+
+    closeMenu.addEventListener('click',()=>{ 
+        menu.style.opacity = '0'        
+        
+        menu.style.right= (menu.offsetWidth * -1) + 'px'
+
+        setTimeout(()=> {
+            menu.removeAttribute('style')
+            openMenu.removeAttribute('style')
+        }, 100)
+    })
+    </script>
+
+</body>
+</html>
